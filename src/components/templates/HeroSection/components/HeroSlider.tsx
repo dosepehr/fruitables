@@ -7,7 +7,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 // import required modules
-import { Navigation ,Autoplay} from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
+import Image from "next/image";
 
 export default function HeroSlider() {
   return (
@@ -15,15 +16,19 @@ export default function HeroSlider() {
       <Swiper
         navigation={true}
         loop
-              className="mySwiper"
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              modules={[Autoplay, Navigation]}
-          >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
+        className="mySwiper px-6"
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay, Navigation]}
+      >
+        <SwiperSlide>
+          <Image src='/images/heroSlider/hero-img-1.png' width={2000} height={2000} alt="fruits" className="rounded-lg bg-mainYellow"/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image src='/images/heroSlider/hero-img-2.jpg' width={2000} height={2000} alt="vegetables" className="rounded-lg" />
+        </SwiperSlide>
       </Swiper>
     </>
   );

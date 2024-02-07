@@ -7,6 +7,31 @@ body {
   font-family: 'Raleway-medium', sans-serif, monospace;
 }
 
+@media (min-width:576px) {
+  .myContainer {
+    max-width: 540px !important;
+  }
+}
+
+
+@media (min-width:768px) {
+  .myContainer {
+    max-width: 720px !important;
+  }
+}
+
+@media (min-width:992px) {
+  .myContainer {
+    max-width: 960px !important;
+  }
+}
+
+@media (min-width:1200px) {
+  .myContainer {
+    max-width: 1140px !important;
+  }
+}
+
 @media (min-width:1400px) {
   .myContainer {
     max-width: 1320px !important;

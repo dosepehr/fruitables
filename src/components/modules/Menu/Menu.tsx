@@ -1,7 +1,8 @@
 import { CiShoppingBasket, CiSearch, CiUser } from "react-icons/ci";
+import Layout from "../Layout/Layout";
 const Menu = () => {
   return (
-    <div className="myContainer mx-auto py-3">
+    <Layout classname="mx-auto py-3">
       <div className="flex items-center justify-between">
         <div>
           <p className="font-ralewayBold text-4xl font-extrabold text-lightGreen">
@@ -46,7 +47,7 @@ const Menu = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

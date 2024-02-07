@@ -1,7 +1,8 @@
 import { IoMail, IoLocationSharp } from "react-icons/io5";
+import Layout from "../Layout/Layout";
 const Navbar = () => {
   return (
-    <div className="myContainer mx-auto hidden lg:block">
+    <Layout classname="mx-auto hidden lg:block">
       <div className="flex items-center justify-between rounded-bl-[100px] rounded-br-[230px] rounded-tl-[230px] rounded-tr-[100px] bg-lightGreen p-3 px-6">
         <div className="flex space-x-4">
           <div className="flex items-center">
@@ -25,7 +26,7 @@ const Navbar = () => {
           <p>Sales and Refunds</p>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 
