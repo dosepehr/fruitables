@@ -16,7 +16,7 @@ export default function HeroSlider() {
       <Swiper
         navigation={true}
         loop
-        className="mySwiper px-6"
+        className="mySwiper"
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
@@ -24,10 +24,22 @@ export default function HeroSlider() {
         modules={[Autoplay, Navigation]}
       >
         <SwiperSlide>
-          <Image src='/images/heroSlider/hero-img-1.png' width={2000} height={2000} alt="fruits" className="rounded-lg bg-mainYellow"/>
+          <Image
+            src="/images/heroSlider/hero-img-1.png"
+            width={2000}
+            height={2000}
+            alt="fruits"
+            className="rounded-lg bg-mainYellow"
+          />
         </SwiperSlide>
-        <SwiperSlide>
-          <Image src='/images/heroSlider/hero-img-2.jpg' width={2000} height={2000} alt="vegetables" className="rounded-lg" />
+        <SwiperSlide className="rounded-lg">
+          <Image
+            src="/images/heroSlider/hero-img-2.jpg"
+            width={2000}
+            height={2000}
+            alt="vegetables"
+            className="rounded-lg"
+          />
         </SwiperSlide>
       </Swiper>
     </>

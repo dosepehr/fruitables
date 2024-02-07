@@ -16,7 +16,7 @@ const HeroSection = () => {
           </h1>
           <SearchBox />
         </div>
-        <div className="w-full md:w-5/12">
+        <div className="mt-4 w-full px-6 md:mt-0 md:w-5/12">
           <HeroSlider />
         </div>
       </Layout>
