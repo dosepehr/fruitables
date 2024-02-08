@@ -1,5 +1,6 @@
-import HeroSection from "@/components/templates/index/HeroSection/HeroSection";
-import Services from "@/components/templates/index/services/Services";
+import HeroSection from "@/components/templates/index/HeroSection";
+import Products from "@/components/templates/index/products";
+import Services from "@/components/templates/index/services";
 import React from "react";
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <>
       <HeroSection />
       <Services />
+      <Products />
     </>
   );
 };
