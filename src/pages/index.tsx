@@ -1,4 +1,4 @@
-import HeroSection from "@/components/templates/HeroSection/HeroSection";
+import HeroSection from "@/components/templates/index/HeroSection/HeroSection";
 import React from "react";
 
 const Home = () => {
