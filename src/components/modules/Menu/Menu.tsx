@@ -2,8 +2,8 @@ import { CiShoppingBasket, CiSearch, CiUser } from "react-icons/ci";
 import Layout from "../Layout/Layout";
 const Menu = () => {
   return (
-    <Layout classname="mx-auto py-3">
-      <div className="flex items-center justify-between">
+    <Layout classname="mx-auto">
+      <div className="flex items-center justify-between py-4">
         <div>
           <p className="font-ralewayBold text-4xl font-extrabold text-lightGreen">
             Fruitables

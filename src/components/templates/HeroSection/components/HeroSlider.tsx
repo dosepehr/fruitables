@@ -16,7 +16,7 @@ export default function HeroSlider() {
       <Swiper
         navigation={true}
         loop
-        className="mySwiper"
+        className="mySwiper mt-8 lg:mt-0"
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,

@@ -6,8 +6,8 @@ import Layout from "@/components/modules/Layout/Layout";
 const HeroSection = () => {
   return (
     <div className="bg-[url('/images/hero-img.jpg')] bg-cover bg-center bg-no-repeat py-12">
-      <Layout classname="flex flex-col items-center justify-between md:flex-row">
-        <div className="w-full pr-12 md:w-7/12">
+      <Layout classname="flex flex-col items-center justify-between lg:flex-row">
+        <div className="w-full lg:pr-12 lg:w-7/12">
           <h2 className="text-2xl font-medium text-mainYellow">
             100% Organic Foods
           </h2>
@@ -16,7 +16,7 @@ const HeroSection = () => {
           </h1>
           <SearchBox />
         </div>
-        <div className="mt-4 w-full px-6 md:mt-0 md:w-5/12">
+        <div className="w-full px-6 md:mt-0 lg:mt-0 lg:w-5/12">
           <HeroSlider />
         </div>
       </Layout>
