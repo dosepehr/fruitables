@@ -31,7 +31,7 @@ const ProductsSelector = () => {
         <button
           key={button.id}
           onClick={() => setCategory(button.content)}
-          className={`rounded-full px-4 py-2 transition-all duration-300 ${button.content == category ? "bg-mainYellow text-white" : "bg-[#f4f6f8] text-[#45595b]"}`}
+          className={`rounded-full px-4 py-2 transition-all duration-300 ${button.content == category ? "bg-mainYellow text-white" : "bg-[#f4f6f8] text-darkGray"}`}
         >
           {button.content}
         </button>

@@ -8,7 +8,7 @@ const Services = () => {
   return (
     <>
       <Layout>
-        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <ServiceBox title="Free Shipping" desc="Free on order over $300">
             <FaCarSide />
           </ServiceBox>

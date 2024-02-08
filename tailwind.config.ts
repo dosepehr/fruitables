@@ -22,6 +22,8 @@ const config: Config = {
       colors: {
         lightGreen: "#81C408",
         mainYellow: "#FFb524",
+        darkGray: "#45595b",
+        lightGray:'#747D88'
       },
     },
   },
