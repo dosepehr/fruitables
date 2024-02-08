@@ -22,7 +22,7 @@ const Product = () => {
         </div>
         <div className="flex items-center justify-around">
           <p className="text-darkGray text-xl font-semibold">$4.99 / Kg</p>
-          <button className="group flex items-center justify-center space-x-2 rounded-full border border-mainYellow px-4 py-1 duration-300 hover:bg-mainYellow">
+          <button className="group flex items-center justify-center space-x-2 rounded-full border border-mainYellow px-3 py-2 duration-300 hover:bg-mainYellow">
             <CiShoppingBasket className="text-2xl text-lightGreen" />
             <p className="text-lightGreen duration-300 group-hover:text-white font-semibold">
               Add to cart

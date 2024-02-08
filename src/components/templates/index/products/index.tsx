@@ -5,7 +5,7 @@ const Products = () => {
   return (
     <>
       <Layout>
-        <div className="mt-10 flex items-center justify-between mb-8">
+        <div className="mt-10 flex items-center justify-between mb-8 flex-col lg:flex-row">
           <p className="text-4xl font-semibold text-darkGray">
             Our Organic Products
           </p>
