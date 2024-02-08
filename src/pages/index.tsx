@@ -1,3 +1,4 @@
+import Banner from "@/components/templates/index/Banner";
 import HeroSection from "@/components/templates/index/HeroSection";
 import Products from "@/components/templates/index/products";
 import Services from "@/components/templates/index/services";
@@ -9,6 +10,7 @@ const Home = () => {
       <HeroSection />
       <Services />
       <Products />
+      <Banner/>
     </>
   );
 };
