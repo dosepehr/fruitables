@@ -93,3 +93,10 @@ body {
   font-style: normal;
   font-display: swap;
 }
+
+/*! slider  */
+.slick-arrow,
+.slick-next {
+  background-color: red;
+  display: none;
+}
