@@ -24,6 +24,12 @@ const Testimonals = () => {
     <>
       <Layout>
         <div className="slider-container">
+          <div className="text-center my-10">
+            <p className="text-2xl text-lightGreen">Our Testimonial</p>
+            <p className="text-5xl font-semibold text-darkGray ">
+              Our Client Saying!
+            </p>
+          </div>
           <Slider {...settings}>
             <Testimonal />
             <Testimonal />
