@@ -7,7 +7,7 @@ import Image from "next/image";
 const index = () => {
   return (
     <>
-      <Breadcrumb />
+      <Breadcrumb text="shop" href="/shop" />
       <Layout>
         <div className="flex flex-col justify-center lg:flex-row lg:space-x-5">
           <div className="lg:w-1/4">
@@ -16,7 +16,7 @@ const index = () => {
             </p>
             <div>
               <Image
-                className="mt-4 rounded-lg my-4"
+                className="my-4 mt-4 rounded-lg"
                 src="/images/banner-fruits.jpg"
                 alt=""
                 width={1000}
