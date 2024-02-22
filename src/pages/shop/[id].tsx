@@ -6,6 +6,7 @@ import Layout from "@/components/modules/Layout/Layout";
 import Table from "@/components/templates/shop-[id]/Table/Table";
 import ProductCounter from "@/components/templates/shop-[id]/ProductCounter/ProductCounter";
 import AddToCartBtn from "@/components/templates/index/products/components/AddToCartBtn";
+import FeaturedProducts from "@/components/templates/shop-[id]/FeaturedProducts/FeaturedProducts";
 
 const Product = () => {
   const router = useRouter();
@@ -22,7 +23,7 @@ const Product = () => {
       <Breadcrumb href="" text="" />
       <Layout>
         <div className="flex flex-col lg:flex-row">
-          <div className="flex flex-col gap-4 lg:w-2/3 lg:flex-row">
+          <div className="flex flex-col gap-4 lg:w-2/3 xl:w-3/4 lg:flex-row">
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-4 lg:flex-row">
                 <div className="lg:w-1/2">
@@ -62,7 +63,10 @@ const Product = () => {
               <Table />
             </div>
           </div>
-          <div className="bg-yellow-100 lg:w-1/3">g</div>
+          <div className="lg:w-1/3 xl:1/4">
+            <p className="mt-4 lg:mt-0 text-2xl text-darkGray" >Featured products</p>
+            <FeaturedProducts />
+          </div>
         </div>
       </Layout>
     </>
