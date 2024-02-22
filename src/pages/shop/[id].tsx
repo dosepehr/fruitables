@@ -1,10 +1,21 @@
+import { useState } from "react";
 import Breadcrumb from "@/components/modules/Breadcrumb/Breadcrumb";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Layout from "@/components/modules/Layout/Layout";
 import Table from "@/components/templates/shop-[id]/Table/Table";
+import ProductCounter from "@/components/templates/shop-[id]/ProductCounter/ProductCounter";
+import AddToCartBtn from "@/components/templates/index/products/components/AddToCartBtn";
+
 const Product = () => {
   const router = useRouter();
+  const [count, setCount] = useState(0);
+  const increaseCount: void = (prev: number) => setCount(prev + 1);
+  const decreaseCount: void = (prev: number) => {
+    if (prev >= 1) {
+      setCount(prev - 1);
+    }
+  };
 
   return (
     <>
@@ -38,6 +49,14 @@ const Product = () => {
                     peacock flounder; chain pickerel hatchetfish, pencilfish
                     snailfish
                   </p>
+                  <ProductCounter
+                    count={count}
+                    increaseCount={() => increaseCount(count)}
+                    decreaseCount={() => decreaseCount(count)}
+                  />
+                  <div onClick={() => console.log(count)}>
+                    <AddToCartBtn />
+                  </div>
                 </div>
               </div>
               <Table />
