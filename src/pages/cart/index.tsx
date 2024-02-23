@@ -42,7 +42,7 @@ const Cart = () => {
                       <TableProduct />
                     </tbody>
                   </table>
-                  <p className="text-lg text-darkGray" >total : 2.99 $</p>
+                  <p className="text-lg text-darkGray">total : 2.99 $</p>
                 </div>
               </div>
             </div>

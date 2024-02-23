@@ -1,0 +1,100 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Orange",
+      "Category": "Fruit",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsa voluptatum sunt iste non inventore, libero a sapiente perferendis vel excepturi, ea vitae optio consequatur adipisci temporibus explicabo ad placeat.",
+      "price": 3.99,
+      "img": "product1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Raspberry",
+      "Category": "Fruit",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsa voluptatum sunt iste non inventore, libero a sapiente perferendis vel excepturi, ea vitae optio consequatur adipisci temporibus explicabo ad placeat.",
+      "price": 4.99,
+      "img": "product2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Banana",
+      "Category": "Fruit",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsa voluptatum sunt iste non inventore, libero a sapiente perferendis vel excepturi, ea vitae optio consequatur adipisci temporibus explicabo ad placeat.",
+      "price": 5.99,
+      "img": "product3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Apricot",
+      "Category": "Fruit",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsa voluptatum sunt iste non inventore, libero a sapiente perferendis vel excepturi, ea vitae optio consequatur adipisci temporibus explicabo ad placeat.",
+      "price": 4.99,
+      "img": "product4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Grapes",
+      "Category": "Fruit",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsa voluptatum sunt iste non inventore, libero a sapiente perferendis vel excepturi, ea vitae optio consequatur adipisci temporibus explicabo ad placeat.",
+      "price": 6.99,
+      "img": "product5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Apple",
+      "Category": "Fruit",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsa voluptatum sunt iste non inventore, libero a sapiente perferendis vel excepturi, ea vitae optio consequatur adipisci temporibus explicabo ad placeat.",
+      "price": 2.99,
+      "img": "product6.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Strawberry",
+      "Category": "Fruit",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsa voluptatum sunt iste non inventore, libero a sapiente perferendis vel excepturi, ea vitae optio consequatur adipisci temporibus explicabo ad placeat.",
+      "price": 4.99,
+      "img": "product7.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Brocoli",
+      "Category": "Vegetable",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsa voluptatum sunt iste non inventore, libero a sapiente perferendis vel excepturi, ea vitae optio consequatur adipisci temporibus explicabo ad placeat.",
+      "price": 6.50,
+      "img": "product8.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Tomato",
+      "Category": "Vegetable",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsa voluptatum sunt iste non inventore, libero a sapiente perferendis vel excepturi, ea vitae optio consequatur adipisci temporibus explicabo ad placeat.",
+      "price": 4.50,
+      "img": "product9.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Bell pepper",
+      "Category": "Vegetable",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsa voluptatum sunt iste non inventore, libero a sapiente perferendis vel excepturi, ea vitae optio consequatur adipisci temporibus explicabo ad placeat.",
+      "price": 5.50,
+      "img": "product10.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Potato",
+      "Category": "Vegetable",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsa voluptatum sunt iste non inventore, libero a sapiente perferendis vel excepturi, ea vitae optio consequatur adipisci temporibus explicabo ad placeat.",
+      "price": 6.50,
+      "img": "product11.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Parsley",
+      "Category": "Vegetable",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsa voluptatum sunt iste non inventore, libero a sapiente perferendis vel excepturi, ea vitae optio consequatur adipisci temporibus explicabo ad placeat.",
+      "price": 2.50,
+      "img": "product12.jpg"
+    }
+  ]
+}
