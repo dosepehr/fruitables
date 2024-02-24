@@ -7,23 +7,36 @@ import Table from "@/components/templates/shop-[id]/Table/Table";
 import ProductCounter from "@/components/templates/shop-[id]/ProductCounter/ProductCounter";
 import AddToCartBtn from "@/components/templates/index/products/components/AddToCartBtn";
 import FeaturedProducts from "@/components/templates/shop-[id]/FeaturedProducts/FeaturedProducts";
-
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { getProduct } from "@/services";
+import { productsType } from "@/types/products.type";
 const Product = () => {
   const router = useRouter();
+  const id: number = +router.query.id;
   const [count, setCount] = useState(0);
-  const increaseCount: void = (prev: number) => setCount(prev + 1);
-  const decreaseCount: void = (prev: number) => {
+  const increaseCount: (prev: number) => void = (prev) => setCount(prev + 1);
+  const decreaseCount: (prev: number) => void = (prev) => {
     if (prev >= 1) {
       setCount(prev - 1);
     }
   };
-
+  const queryClient = useQueryClient();
+  const products: productsType[] = queryClient.getQueryData(["products"]);
+  const { data } = useQuery({
+    queryKey: ["products", id],
+    queryFn: () => getProduct(id),
+    initialData: () => {
+      const product = products?.find((product) => product.id == id);
+      return { data: product };
+    },
+  });
+  const product: productsType = data?.data;
   return (
     <>
-      <Breadcrumb href="" text="" />
+      <Breadcrumb href="" text={product?.name} />
       <Layout>
         <div className="flex flex-col lg:flex-row">
-          <div className="flex flex-col gap-4 lg:w-2/3 xl:w-3/4 lg:flex-row">
+          <div className="flex flex-col gap-4 lg:w-2/3 lg:flex-row xl:w-3/4">
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-4 lg:flex-row">
                 <div className="lg:w-1/2">
@@ -33,23 +46,21 @@ const Product = () => {
                       width={1000}
                       height={1000}
                       alt=""
-                      src="/images/best-product-1.jpg"
+                      src={`http://localhost:9000/images/${product?.img}`}
                     />
                   </div>
                 </div>
                 <div className="lg:w-1/2">
                   <p className="mb-3 text-2xl font-bold text-darkGray">
-                    Brocoli
+                    {product?.name}
                   </p>
-                  <p className="mb-3 text-lightGray">Category: Vegetables</p>
-                  <p className="mb-3 text-2xl font-bold text-darkGray">3.35$</p>
                   <p className="mb-3 text-lightGray">
-                    The generated Lorem Ipsum is therefore always free from
-                    repetition injected humour, or non-characteristic words etc.
-                    Susp endisse ultricies nisi vel quam suscipit. Sabertooth
-                    peacock flounder; chain pickerel hatchetfish, pencilfish
-                    snailfish
+                    Category: {product?.Category}
                   </p>
+                  <p className="mb-3 text-2xl font-bold text-darkGray">
+                    {product?.price}$
+                  </p>
+                  <p className="mb-3 text-lightGray">{product?.desc}</p>
                   <ProductCounter
                     count={count}
                     increaseCount={() => increaseCount(count)}
@@ -63,8 +74,10 @@ const Product = () => {
               <Table />
             </div>
           </div>
-          <div className="lg:w-1/3 xl:1/4">
-            <p className="mt-4 lg:mt-0 text-2xl text-darkGray" >Featured products</p>
+          <div className="xl:1/4 lg:w-1/3">
+            <p className="mt-4 text-2xl text-darkGray lg:mt-0">
+              Featured products
+            </p>
             <FeaturedProducts />
           </div>
         </div>
