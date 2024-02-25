@@ -10,6 +10,7 @@ import FeaturedProducts from "@/components/templates/shop-[id]/FeaturedProducts/
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { getProduct } from "@/services";
 import { productsType } from "@/types/products.type";
+import { useCounterStore } from "@/store/StoreProvider";
 const Product = () => {
   const router = useRouter();
   const id: number = +router.query.id;
@@ -20,12 +21,16 @@ const Product = () => {
       setCount(prev - 1);
     }
   };
+  const { addToCart } = useCounterStore((state) => state);
+  const handleAddToCart = (product: productsType) => {
+    addToCart({ ...product }, count);
+  };
   const queryClient = useQueryClient();
-  const products: productsType[] = queryClient.getQueryData(["products"]);
   const { data } = useQuery({
     queryKey: ["products", id],
     queryFn: () => getProduct(id),
     initialData: () => {
+      const products: productsType[] = queryClient.getQueryData(["products"]);
       const product = products?.find((product) => product.id == id);
       return { data: product };
     },
@@ -66,7 +71,7 @@ const Product = () => {
                     increaseCount={() => increaseCount(count)}
                     decreaseCount={() => decreaseCount(count)}
                   />
-                  <div onClick={() => console.log(count)}>
+                  <div onClick={() => handleAddToCart(product)}>
                     <AddToCartBtn />
                   </div>
                 </div>
