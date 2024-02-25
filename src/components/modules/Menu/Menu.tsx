@@ -1,5 +1,6 @@
 import { CiShoppingBasket, CiSearch, CiUser } from "react-icons/ci";
 import Layout from "../Layout/Layout";
+import Link from "next/link";
 const Menu = () => {
   return (
     <Layout classname="mx-auto">
@@ -10,24 +11,24 @@ const Menu = () => {
           </p>
         </div>
         <div className="hidden items-center space-x-6 justify-self-center xl:flex">
-          <a
-            href="#"
+          <Link
+            href="/"
             className="text-[#0000008C] duration-300 hover:text-lightGreen"
           >
             Home
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/shop"
             className="text-[#0000008C] duration-300 hover:text-lightGreen"
           >
             Shop
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/cart"
             className="hover:text-lightGree text-[#0000008C] duration-300 "
           >
             Cart
-          </a>
+          </Link>
           <a
             href="#"
             className="hover:text-lightGree text-[#0000008C] duration-300 "

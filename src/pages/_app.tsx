@@ -8,7 +8,7 @@ import Menu from "@/components/modules/Menu/Menu";
 import Navbar from "@/components/modules/Navbar/Navbar";
 import Footer from "@/components/modules/Footer/Footer";
 // store
-import { CounterStoreProvider } from "@/store/StoreProvider";
+import { StoreProvider } from "@/store/StoreProvider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 const queryClient = new QueryClient();
@@ -16,7 +16,7 @@ const queryClient = new QueryClient();
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <CounterStoreProvider>
+      <StoreProvider>
         <QueryClientProvider client={queryClient}>
           <ReactQueryDevtools initialIsOpen={false} />
           <Navbar />
@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
           <Footer />
         </QueryClientProvider>
-      </CounterStoreProvider>
+      </StoreProvider>
     </>
   );
 }

@@ -1,17 +1,20 @@
 import { productsType } from "@/types/products.type";
 import { createStore } from "zustand/vanilla";
 
-type storeTypes = {
+export type storeTypes = {
   basket: productsType[] | [];
-  addToCart: (product: productsType) => void;
+  addToCart: (product: productsType, count: number) => void;
 };
 
-export const createCounterStore = () => {
+export const createAppStore = () => {
   return createStore<storeTypes>()((set, get) => ({
     basket: [],
     addToCart: (product: productsType, count: number) => {
-      const existingItem = get().basket.find((item) => item.id === product.id);
-      if (existingItem) {
+      const existingItemIndex = get().basket.findIndex(
+        (item) => item.id === product.id,
+      );
+      if (existingItemIndex >= 0) {
+        get().basket[existingItemIndex] = { ...product, count };
       } else {
         if (count) {
           set((state) => ({

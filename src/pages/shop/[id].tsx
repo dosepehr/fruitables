@@ -10,7 +10,7 @@ import FeaturedProducts from "@/components/templates/shop-[id]/FeaturedProducts/
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { getProduct } from "@/services";
 import { productsType } from "@/types/products.type";
-import { useCounterStore } from "@/store/StoreProvider";
+import { useAppStore } from "@/store/StoreProvider";
 const Product = () => {
   const router = useRouter();
   const id: number = +router.query.id;
@@ -21,7 +21,7 @@ const Product = () => {
       setCount(prev - 1);
     }
   };
-  const { addToCart } = useCounterStore((state) => state);
+  const { addToCart } = useAppStore((state) => state);
   const handleAddToCart = (product: productsType) => {
     addToCart({ ...product }, count);
   };
