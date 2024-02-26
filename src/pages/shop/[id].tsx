@@ -29,11 +29,11 @@ const Product = () => {
   const { data } = useQuery({
     queryKey: ["products", id],
     queryFn: () => getProduct(id),
-    initialData: () => {
-      const products: productsType[] = queryClient.getQueryData(["products"]);
-      const product = products?.find((product) => product.id == id);
-      return { data: product };
-    },
+    // initialData: () => {
+    //   const products: productsType[] = queryClient.getQueryData(["products"]);
+    //   const product = products?.find((product) => product.id == id);
+    //   return { data: product };
+    // },
   });
   const product: productsType = data?.data;
   return (

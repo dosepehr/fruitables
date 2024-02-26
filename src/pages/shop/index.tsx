@@ -3,8 +3,16 @@ import Breadcrumb from "@/components/modules/Breadcrumb/Breadcrumb";
 import Product from "@/components/templates/index/products/components/Product";
 import Layout from "@/components/modules/Layout/Layout";
 import Image from "next/image";
+import { useQuery } from "@tanstack/react-query";
+import { getProducts } from "@/services";
+import { productsType } from "@/types/products.type";
 
 const index = () => {
+  const { data } = useQuery({
+    queryKey: ["products"],
+    queryFn: () => getProducts(),
+  });
+  const products = data?.data;
   return (
     <>
       <Breadcrumb text="shop" href="/shop" />
@@ -26,10 +34,9 @@ const index = () => {
           </div>
           <div className="lg:w-3/4">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-              <Product />
-              <Product />
-              <Product />
-              <Product />
+              {products?.map((product: productsType) => (
+                <Product key={product.id} {...product} />
+              ))}
             </div>
           </div>
         </div>
