@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useState, FC } from "react";
 import Image from "next/image";
 import ProductCounter from "../shop-[id]/ProductCounter/ProductCounter";
 import { FaTimes } from "react-icons/fa";
-const TableProduct = () => {
-  const [count, setCount] = useState(0);
+import { productsType } from "@/types/products.type";
+const TableProduct: FC<productsType> = ({
+  img,
+  name,
+  price,
+  count: productCount,
+}) => {
+  const [count, setCount] = useState(productCount);
 
   const increaseCount: void = (prev: number) => setCount(prev + 1);
   const decreaseCount: void = (prev: number) => {
@@ -14,20 +20,20 @@ const TableProduct = () => {
   return (
     <>
       <tr className="border-t border-lightGray">
-        <td className="py-4" >
+        <td className="py-4">
           <Image
             className="h-24 w-24 rounded-[0.625rem]"
             width={1000}
             height={1000}
             alt=""
-            src="/images/best-product-1.jpg"
+            src={`http://localhost:9000/images/${img}`}
           />
         </td>
         <td>
-          <p className="text-lightGray">Big Banana</p>
+          <p className="text-lightGray">{name}</p>
         </td>
         <td>
-          <p className="text-lightGray">2.99 $</p>
+          <p className="text-lightGray">{price} $</p>
         </td>
         <td>
           <ProductCounter
@@ -37,7 +43,7 @@ const TableProduct = () => {
           />
         </td>
         <td>
-          <p className="text-lightGray">2.99 $</p>
+          <p className="text-lightGray">{count * price} $</p>
         </td>
         <td>
           <button className="rounded-full bg-[#f4f6f8] p-2 text-red-500">

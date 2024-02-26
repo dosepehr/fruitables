@@ -1,9 +1,11 @@
 import Breadcrumb from "@/components/modules/Breadcrumb/Breadcrumb";
 import Layout from "@/components/modules/Layout/Layout";
 import TableProduct from "@/components/templates/cart/TableProduct";
+import { useAppStore } from "@/store/StoreProvider";
 import React from "react";
 
 const Cart = () => {
+  const { basket } = useAppStore((state) => state);
   return (
     <>
       <Breadcrumb href="/cart" text="cart" />
@@ -38,8 +40,9 @@ const Cart = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      <TableProduct />
-                      <TableProduct />
+                      {basket.map((item) => (
+                        <TableProduct key={item.id} {...item} />
+                      ))}
                     </tbody>
                   </table>
                   <p className="text-lg text-darkGray">total : 2.99 $</p>
