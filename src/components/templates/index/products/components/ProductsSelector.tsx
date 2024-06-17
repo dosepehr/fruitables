@@ -13,15 +13,7 @@ const ProductsSelector = () => {
     {
       id: 3,
       content: "Fruits",
-    },
-    {
-      id: 4,
-      content: "Bread",
-    },
-    {
-      id: 5,
-      content: "Meat",
-    },
+    }
   ];
   const [category, setCategory] = useState<string>("All Products");
 
