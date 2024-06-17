@@ -4,11 +4,13 @@ import { createStore } from "zustand/vanilla";
 export type storeTypes = {
   basket: productsType[] | [];
   addToCart: (product: productsType, count: number) => void;
+  totalPrice: number;
 };
 
 export const createAppStore = () => {
   return createStore<storeTypes>()((set, get) => ({
     basket: [],
+    totalPrice: 0,
     addToCart: (product: productsType, count: number) => {
       const existingItemIndex = get().basket.findIndex(
         (item) => item.id === product.id,

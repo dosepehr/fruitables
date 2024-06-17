@@ -43,7 +43,7 @@ const TableProduct: FC<productsType> = ({
           />
         </td>
         <td>
-          <p className="text-lightGray">{count * price} $</p>
+          <p className="text-lightGray">{(count * price).toFixed(2)} $</p>
         </td>
         <td>
           <button className="rounded-full bg-[#f4f6f8] p-2 text-red-500">

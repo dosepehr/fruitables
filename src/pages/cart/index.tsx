@@ -5,7 +5,8 @@ import { useAppStore } from "@/store/StoreProvider";
 import React from "react";
 
 const Cart = () => {
-  const { basket } = useAppStore((state) => state);
+  const { basket, totalPrice } = useAppStore((state) => state);
+  
   return (
     <>
       <Breadcrumb href="/cart" text="cart" />
@@ -45,7 +46,9 @@ const Cart = () => {
                       ))}
                     </tbody>
                   </table>
-                  <p className="text-lg text-darkGray">total : 2.99 $</p>
+                  <p className="text-lg text-darkGray">
+                    total : {totalPrice} $
+                  </p>
                 </div>
               </div>
             </div>
