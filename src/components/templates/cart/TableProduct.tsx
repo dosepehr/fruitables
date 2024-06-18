@@ -3,55 +3,55 @@ import Image from "next/image";
 import ProductCounter from "../shop-[id]/ProductCounter/ProductCounter";
 import { FaTimes } from "react-icons/fa";
 import { productsType } from "@/types/products.type";
+
 const TableProduct: FC<productsType> = ({
   img,
   name,
   price,
-  count: productCount,
+  count: initialProductCount,
 }) => {
-  const [count, setCount] = useState(productCount);
+  const [count, setCount] = useState(initialProductCount || 0);
 
-  const increaseCount: void = (prev: number) => setCount(prev + 1);
-  const decreaseCount: void = (prev: number) => {
-    if (prev >= 1) {
-      setCount(prev - 1);
+  const increaseCount = () => setCount(count + 1);
+  const decreaseCount = () => {
+    if (count > 0) {
+      setCount(count - 1);
     }
   };
+
   return (
-    <>
-      <tr className="border-t border-lightGray">
-        <td className="py-4">
-          <Image
-            className="h-24 w-24 rounded-[0.625rem]"
-            width={1000}
-            height={1000}
-            alt=""
-            src={`http://localhost:9000/images/${img}`}
-          />
-        </td>
-        <td>
-          <p className="text-lightGray">{name}</p>
-        </td>
-        <td>
-          <p className="text-lightGray">{price} $</p>
-        </td>
-        <td>
-          <ProductCounter
-            count={productCount}
-            increaseCount={() => increaseCount(count)}
-            decreaseCount={() => decreaseCount(count)}
-          />
-        </td>
-        <td>
-          <p className="text-lightGray">{(count * price).toFixed(2)} $</p>
-        </td>
-        <td>
-          <button className="rounded-full bg-[#f4f6f8] p-2 text-red-500">
-            <FaTimes />
-          </button>
-        </td>
-      </tr>
-    </>
+    <tr className="border-t border-lightGray">
+      <td className="py-4">
+        <Image
+          className="h-24 w-24 rounded-[0.625rem]"
+          width={1000}
+          height={1000}
+          alt=""
+          src={`http://localhost:9000/images/${img}`}
+        />
+      </td>
+      <td>
+        <p className="text-lightGray">{name}</p>
+      </td>
+      <td>
+        <p className="text-lightGray">{price} $</p>
+      </td>
+      <td>
+        <ProductCounter
+          count={count}
+          increaseCount={increaseCount}
+          decreaseCount={decreaseCount}
+        />
+      </td>
+      <td>
+        <p className="text-lightGray">{(count * price).toFixed(2)} $</p>
+      </td>
+      <td>
+        <button className="rounded-full bg-[#f4f6f8] p-2 text-red-500">
+          <FaTimes />
+        </button>
+      </td>
+    </tr>
   );
 };
 

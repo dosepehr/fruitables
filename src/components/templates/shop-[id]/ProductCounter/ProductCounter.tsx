@@ -3,9 +3,10 @@ import { FaMinus, FaPlus } from "react-icons/fa";
 
 type ProductCounterProps = {
   count: number;
-  decreaseCount: (count: number) => void;
-  increaseCount: (count: number) => void;
+  decreaseCount: () => void;
+  increaseCount: () => void;
 };
+
 const ProductCounter: FC<ProductCounterProps> = ({
   count,
   increaseCount,
